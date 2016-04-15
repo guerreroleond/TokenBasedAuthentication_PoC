@@ -28,7 +28,7 @@ namespace TokenBasedAuthentication_PoC.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            IdentityResult result = await _repo.RegisterUser(userModel);
+            IdentityResult result = await _repo.RegisterAspUser(userModel);
 
             IHttpActionResult errorResult = GetErrorResult(result);
 
